@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package calculadora;
-
 /**
  *
  * @author USUARIO
  */
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
 public class CalculadoraApp extends javax.swing.JFrame {
     public float primerNumero;
     public float segundoNumero;
     public String operador;
     
-    
+
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculadoraApp.class.getName());
 
@@ -54,6 +57,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
         botonPotencia = new javax.swing.JButton();
         botonDiv1 = new javax.swing.JButton();
         botonTres1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         casilla = new javax.swing.JLabel();
         casillaDos = new javax.swing.JLabel();
@@ -318,6 +322,16 @@ public class CalculadoraApp extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn6.png"))); // NOI18N
+        jButton1.setFocusPainted(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn7.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -334,23 +348,25 @@ public class CalculadoraApp extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(botonDiv1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
                                 .addComponent(botonSiete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(botonOcho, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(botonNueve, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(botonMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(botonUno, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonCero, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonPunto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(botonPunto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(botonDos, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -380,36 +396,34 @@ public class CalculadoraApp extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(botonDiv1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botonNueve, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonOcho, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonSiete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonNueve, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonOcho, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonSiete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonSeis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCinco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botonCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botonResta, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botonCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonResta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botonUno, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botonDos, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE)
+                        .addComponent(botonDos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(botonTres1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(botonSuma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botonCero, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botonPunto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(botonIgual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botonCero, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonPunto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botonIgual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -424,6 +438,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
         casillaDos.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         casillaDos.setForeground(new java.awt.Color(55, 62, 71));
+        casillaDos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         casillaDos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -452,10 +467,12 @@ public class CalculadoraApp extends javax.swing.JFrame {
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
         // TODO add your handling code here:
         this.casilla.setText("");
+        this.casillaDos.setText("");
     }//GEN-LAST:event_botonBorrarActionPerformed
 
     private void botonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDivActionPerformed
         // TODO add your handling code here:
+        addNumber("/");
         this.primerNumero = Float.parseFloat(this.casilla.getText());
         this.operador = "/";
         this.casilla.setText("");
@@ -463,51 +480,56 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
     private void botonCeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCeroActionPerformed
         // TODO add your handling code here:
-        this.casilla.setText(this.casilla.getText() + "0");
+        addNumber("0");
+         this.casilla.setText(casilla.getText() + "0");
     }//GEN-LAST:event_botonCeroActionPerformed
 
     private void botonUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonUnoActionPerformed
         // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "1");
+        addNumber("1");
+         this.casilla.setText(casilla.getText() + "1");
     }//GEN-LAST:event_botonUnoActionPerformed
-
-    private void botonDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDosActionPerformed
-        // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "2");
-    }//GEN-LAST:event_botonDosActionPerformed
 
     private void botonCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCuatroActionPerformed
         // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "4");
+        addNumber("4");
+         this.casilla.setText(casilla.getText() + "4");
     }//GEN-LAST:event_botonCuatroActionPerformed
 
     private void botonCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCincoActionPerformed
         // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "5");
+        addNumber("5");
+         this.casilla.setText(casilla.getText() + "5");
     }//GEN-LAST:event_botonCincoActionPerformed
 
     private void botonSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeisActionPerformed
         // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "6");
+        addNumber("6");
+         this.casilla.setText(casilla.getText() + "6");
     }//GEN-LAST:event_botonSeisActionPerformed
 
     private void botonSieteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSieteActionPerformed
         // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "7");
+        addNumber("7");
+         this.casilla.setText(casilla.getText() + "7");
+       
     }//GEN-LAST:event_botonSieteActionPerformed
 
     private void botonOchoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOchoActionPerformed
         // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "8");
+       addNumber("8");
+        this.casilla.setText(casilla.getText() + "8");
     }//GEN-LAST:event_botonOchoActionPerformed
 
     private void botonNueveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNueveActionPerformed
         // TODO add your handling code here:
-        casilla.setText(casilla.getText() + "9");
+        addNumber("9");
+        this.casilla.setText(casilla.getText() + "9");
     }//GEN-LAST:event_botonNueveActionPerformed
 
     private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
         // TODO add your handling code here:
+        addNumber("+");
         this.primerNumero = Float.parseFloat(this.casilla.getText());
         this.operador = "+";
         this.casilla.setText("");
@@ -541,6 +563,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
     private void botonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRestaActionPerformed
         // TODO add your handling code here:
+        addNumber("-");
         this.primerNumero = Float.parseFloat(this.casilla.getText());
         this.operador = "-";
         this.casilla.setText("");
@@ -548,6 +571,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
     private void botonMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMultiActionPerformed
         // TODO add your handling code here:
+        addNumber("*");
         this.primerNumero = Float.parseFloat(this.casilla.getText());
         this.operador = "*";
         this.casilla.setText("");
@@ -562,6 +586,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
     private void botonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPotenciaActionPerformed
         // TODO add your handling code here:
+        addNumber("^");
         this.primerNumero = Float.parseFloat(this.casilla.getText());
         operador = "^";
         this.casilla.setText("");
@@ -569,6 +594,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
     private void botonDiv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDiv1ActionPerformed
         // TODO add your handling code here:
+        addNumber("%");
         this.primerNumero =Float.parseFloat(this.casilla.getText());
         this.operador = "%";
         this.casilla.setText("");
@@ -576,8 +602,48 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
     private void botonTres1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTres1ActionPerformed
         // TODO add your handling code here:
+        addNumber("3");
+         this.casilla.setText(casilla.getText() + "3");
     }//GEN-LAST:event_botonTres1ActionPerformed
-    private int contadorParentesis = 0;    
+
+    private void botonDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDosActionPerformed
+        // TODO add your handling code here:
+        addNumber("2");
+        this.casilla.setText(casilla.getText() + "2");
+    }//GEN-LAST:event_botonDosActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+       String operacion = casillaDos.getText();
+
+    if (!operacion.isEmpty()) {
+        // Borra el último carácter
+        operacion = operacion.substring(0, operacion.length() - 1);
+        casillaDos.setText(operacion);
+
+        // Intenta calcular el nuevo resultado si queda algo válido
+        try {
+            if (!operacion.isEmpty() && !terminaEnOperador(operacion)) {
+                // Evaluar operación con ScriptEngine
+                ScriptEngine engine = new ScriptEngineManager().getEngineByName("JavaScript");
+                Object resultado = engine.eval(operacion);
+                casilla.setText(resultado.toString());
+            } else {
+                casilla.setText(""); // Si termina en operador, vacía el resultado
+            }
+        } catch (ScriptException e) {
+            casilla.setText(""); // En caso de error (por ejemplo, expresión inválida)
+        }
+    }
+            
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+ 
+    // Verifica si el string termina en un operador matemático
+private boolean terminaEnOperador(String texto) {
+    return texto.endsWith("+") || texto.endsWith("-") || texto.endsWith("*") || texto.endsWith("/");
+}
+
     public String recorte(float resultado){
         String retorno;
         
@@ -589,6 +655,12 @@ public class CalculadoraApp extends javax.swing.JFrame {
         
         return retorno;
         
+    }
+    
+    public void addNumber(String digito){
+        this.casillaDos.setText(casillaDos.getText() + digito);
+        this.casilla.setText(casilla.getText()  );
+ 
     }
     /**
      * @param args the command line arguments
@@ -637,6 +709,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
     private javax.swing.JButton botonUno;
     private javax.swing.JLabel casilla;
     private javax.swing.JLabel casillaDos;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
