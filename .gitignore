@@ -1,7 +1,20 @@
-# Ignorar carpetas de compilación y distribución
+# Ignorar archivos y carpetas generadas automáticamente por NetBeans
+nbproject/private/
 build/
 dist/
 
-# Ignorar archivos compilados
+# Ignorar archivos de backup del sistema
 *.class
-*.jar
+*.log
+*.bak
+*.tmp
+*.swp
+
+# Ignorar archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# EXCEPCIONES: incluir librerías necesarias
+!lib/
+!lib/CopyLibs/
+!lib/absolutelayout/
