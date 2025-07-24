@@ -7,9 +7,13 @@ package calculadora;
  *
  * @author USUARIO
  */
+import java.awt.Color;
+import java.awt.Frame;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 public class CalculadoraApp extends javax.swing.JFrame {
     public float primerNumero;
@@ -55,12 +59,15 @@ public class CalculadoraApp extends javax.swing.JFrame {
         botonPunto = new javax.swing.JButton();
         botonCero = new javax.swing.JButton();
         botonPotencia = new javax.swing.JButton();
-        botonDiv1 = new javax.swing.JButton();
-        botonTres1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        botonMod = new javax.swing.JButton();
+        botonTres = new javax.swing.JButton();
+        botonBorradorU = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         casilla = new javax.swing.JLabel();
         casillaDos = new javax.swing.JLabel();
+        botonCambiador = new javax.swing.JButton();
+        botonE = new javax.swing.JButton();
+        botonM = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -296,39 +303,39 @@ public class CalculadoraApp extends javax.swing.JFrame {
             }
         });
 
-        botonDiv1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        botonDiv1.setForeground(new java.awt.Color(55, 62, 71));
-        botonDiv1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn1.png"))); // NOI18N
-        botonDiv1.setText("%");
-        botonDiv1.setFocusPainted(false);
-        botonDiv1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonDiv1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn2.png"))); // NOI18N
-        botonDiv1.addActionListener(new java.awt.event.ActionListener() {
+        botonMod.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        botonMod.setForeground(new java.awt.Color(55, 62, 71));
+        botonMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn1.png"))); // NOI18N
+        botonMod.setText("%");
+        botonMod.setFocusPainted(false);
+        botonMod.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonMod.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn2.png"))); // NOI18N
+        botonMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonDiv1ActionPerformed(evt);
+                botonModActionPerformed(evt);
             }
         });
 
-        botonTres1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        botonTres1.setForeground(new java.awt.Color(55, 62, 71));
-        botonTres1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn3.png"))); // NOI18N
-        botonTres1.setText("3");
-        botonTres1.setFocusable(false);
-        botonTres1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonTres1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn2.png"))); // NOI18N
-        botonTres1.addActionListener(new java.awt.event.ActionListener() {
+        botonTres.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        botonTres.setForeground(new java.awt.Color(55, 62, 71));
+        botonTres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn3.png"))); // NOI18N
+        botonTres.setText("3");
+        botonTres.setFocusable(false);
+        botonTres.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonTres.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn2.png"))); // NOI18N
+        botonTres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonTres1ActionPerformed(evt);
+                botonTresActionPerformed(evt);
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn6.png"))); // NOI18N
-        jButton1.setFocusPainted(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn7.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonBorradorU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn6.png"))); // NOI18N
+        botonBorradorU.setFocusPainted(false);
+        botonBorradorU.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonBorradorU.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn7.png"))); // NOI18N
+        botonBorradorU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonBorradorUActionPerformed(evt);
             }
         });
 
@@ -346,7 +353,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(botonPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botonDiv1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botonMod, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(botonSiete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -366,11 +373,11 @@ public class CalculadoraApp extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(botonPunto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botonBorradorU, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(botonDos, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botonTres1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(botonTres, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,7 +402,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                         .addComponent(botonPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(botonDiv1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(botonMod, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -414,7 +421,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botonUno, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(botonDos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(botonTres1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botonTres, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(botonSuma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,7 +430,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                             .addComponent(botonCero, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonPunto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(botonIgual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonBorradorU, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -441,21 +448,62 @@ public class CalculadoraApp extends javax.swing.JFrame {
         casillaDos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         casillaDos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
+        botonCambiador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/whitemode.png"))); // NOI18N
+        botonCambiador.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonCambiador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCambiadorActionPerformed(evt);
+            }
+        });
+
+        botonE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn_exit1.png"))); // NOI18N
+        botonE.setFocusable(false);
+        botonE.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn_exit.png"))); // NOI18N
+        botonE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEActionPerformed(evt);
+            }
+        });
+
+        botonM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn_minimize.png"))); // NOI18N
+        botonM.setFocusable(false);
+        botonM.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btn1_minimize.png"))); // NOI18N
+        botonM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(casilla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(casillaDos, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(botonE, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(casillaDos, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonCambiador, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonCambiador, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonE, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(casillaDos, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(casilla, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 160));
@@ -592,19 +640,19 @@ public class CalculadoraApp extends javax.swing.JFrame {
         this.casilla.setText("");
     }//GEN-LAST:event_botonPotenciaActionPerformed
 
-    private void botonDiv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDiv1ActionPerformed
+    private void botonModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModActionPerformed
         // TODO add your handling code here:
         addNumber("%");
         this.primerNumero =Float.parseFloat(this.casilla.getText());
         this.operador = "%";
         this.casilla.setText("");
-    }//GEN-LAST:event_botonDiv1ActionPerformed
+    }//GEN-LAST:event_botonModActionPerformed
 
-    private void botonTres1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTres1ActionPerformed
+    private void botonTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTresActionPerformed
         // TODO add your handling code here:
         addNumber("3");
          this.casilla.setText(casilla.getText() + "3");
-    }//GEN-LAST:event_botonTres1ActionPerformed
+    }//GEN-LAST:event_botonTresActionPerformed
 
     private void botonDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDosActionPerformed
         // TODO add your handling code here:
@@ -612,9 +660,8 @@ public class CalculadoraApp extends javax.swing.JFrame {
         this.casilla.setText(casilla.getText() + "2");
     }//GEN-LAST:event_botonDosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-       String operacion = casillaDos.getText();
+    private void botonBorradorUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorradorUActionPerformed
+      String operacion = casillaDos.getText();
 
     if (!operacion.isEmpty()) {
         // Borra el último carácter
@@ -626,8 +673,13 @@ public class CalculadoraApp extends javax.swing.JFrame {
             if (!operacion.isEmpty() && !terminaEnOperador(operacion)) {
                 // Evaluar operación con ScriptEngine
                 ScriptEngine engine = new ScriptEngineManager().getEngineByName("JavaScript");
-                Object resultado = engine.eval(operacion);
-                casilla.setText(resultado.toString());
+                if (engine != null) {
+                    Object resultado = engine.eval(operacion);
+                    casilla.setText(resultado.toString());
+                } 
+                  else {
+                       System.out.println("Motor JavaScript no disponible");
+                   }
             } else {
                 casilla.setText(""); // Si termina en operador, vacía el resultado
             }
@@ -637,12 +689,189 @@ public class CalculadoraApp extends javax.swing.JFrame {
     }
             
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonBorradorUActionPerformed
+
+    boolean modoOscuro =  false;
+    
+    private void botonCambiadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambiadorActionPerformed
+        // TODO add your handling code here:
+        if(!modoOscuro){
+          jPanel2.setBackground(Color.decode("#212b41"));
+          jPanel1.setBackground(Color.decode("#2e3951"));
+          casillaDos.setForeground(Color.decode("#0db387"));
+          casilla.setForeground(Color.decode("#0db387"));
+        
+          cambiarColorOscuro(botonCero);
+          cambiarColorOscuro(botonUno);
+          cambiarColorOscuro(botonDos);
+          cambiarColorOscuro(botonTres);
+          cambiarColorOscuro(botonCuatro);
+          cambiarColorOscuro(botonCinco);
+          cambiarColorOscuro(botonSeis);
+          cambiarColorOscuro(botonSiete);
+          cambiarColorOscuro(botonOcho);
+          cambiarColorOscuro(botonNueve);
+          cambiarColorOscuro(botonPunto);
+          cambiarColorDosOscuro(botonDiv);
+          cambiarColorDosOscuro(botonMod);
+          cambiarColorDosOscuro(botonMulti);
+          cambiarColorDosOscuro(botonResta);
+          cambiarColorDosOscuro(botonSuma);
+          cambiarColorDosOscuro(botonPotencia);
+          cambiarColorDosOscuro(botonBorrar);
+          cambiarColorTresOscuro(botonBorradorU);
+          cambiarColorIgualOscuro(botonIgual);
+          cambiarColorOscuroE(botonE);
+          cambiarColorOscuroM(botonM);
+          cambiarBotonBlack(botonCambiador);
+          modoOscuro = true;
+        } else {
+             jPanel2.setBackground(Color.decode("#CCFFFF"));
+             jPanel1.setBackground(Color.decode("#FFFFFF"));
+             casillaDos.setForeground(Color.decode("#373E47"));
+             casilla.setForeground(Color.decode("#373E47"));
+             cambiarColorClaro(botonCero);
+             cambiarColorClaro(botonUno);
+             cambiarColorClaro(botonDos);
+             cambiarColorClaro(botonTres);
+             cambiarColorClaro(botonCuatro);
+             cambiarColorClaro(botonCinco);
+             cambiarColorClaro(botonSeis);
+             cambiarColorClaro(botonSiete);
+             cambiarColorClaro(botonOcho);
+             cambiarColorClaro(botonNueve);
+             cambiarColorClaro(botonPunto);
+             cambiarIgualClaro(botonIgual);
+             cambiarColorDosClaro(botonDiv);
+             cambiarColorDosClaro(botonSuma);
+             cambiarColorDosClaro(botonResta);
+             cambiarColorDosClaro(botonPotencia);
+             cambiarColorDosClaro(botonMod);
+             cambiarColorDosClaro(botonMulti);
+             cambiarColorDosClaro(botonBorrar);
+             cambiarColorTresClaro(botonBorradorU);
+             cambiarColorClaroE(botonE);
+             cambiarColorClaroM(botonM);
+             cambiarBotonWhite(botonCambiador);
+             modoOscuro = false;
+        
+        }
+          
+    }//GEN-LAST:event_botonCambiadorActionPerformed
+
+    private void botonEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_botonEActionPerformed
+
+    private void botonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMActionPerformed
+        // TODO add your handling code here:
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_botonMActionPerformed
  
     // Verifica si el string termina en un operador matemático
 private boolean terminaEnOperador(String texto) {
     return texto.endsWith("+") || texto.endsWith("-") || texto.endsWith("*") || texto.endsWith("/");
 }
+
+
+public void cambiarBotonBlack(JButton botonB){
+     botonB.setIcon(new ImageIcon(getClass().getResource("/imagenes/darkmode.png")));
+}
+
+public void cambiarBotonWhite(JButton botonW){
+    botonW.setIcon(new ImageIcon(getClass().getResource("/imagenes/whitemode.png")));
+}
+
+public void cambiarColorClaro(JButton boton){
+    
+     boton.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn3.png")));
+     boton.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn3.png")));
+     boton.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn2.png")));
+     boton.setForeground(Color.decode("#565656"));
+}
+
+public void cambiarColorDosClaro(JButton botonDos){
+     botonDos.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn1.png")));
+     botonDos.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn1.png")));
+     botonDos.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn2.png")));
+     botonDos.setForeground(Color.decode("#565656"));
+    
+}
+public void cambiarIgualClaro(JButton botonC){
+    
+     botonC.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn4.png")));
+     botonC.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn4.png")));
+     botonC.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn5.png")));
+     botonC.setForeground(Color.decode("#FFFFFF"));
+}
+
+public void cambiarColorTresClaro(JButton botonTres){
+     botonTres.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn6.png")));
+     botonTres.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn6.png")));
+     botonTres.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn7.png")));
+     
+}
+
+public void cambiarColorOscuroE(JButton botonE){
+     botonE.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn_exit1Black.png")));
+     botonE.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn_exit1Black.png")));
+     botonE.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn_exitBlack.png")));
+     
+}
+
+public void cambiarColorClaroE(JButton botonE){
+     botonE.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn_exit1.png")));
+     botonE.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn_exit1.png")));
+     botonE.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn_exit.png")));
+     
+}
+
+public void cambiarColorOscuroM(JButton botonM){
+     botonM.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn_minimizeBlack.png")));
+     botonM.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn_minimizeBlack.png")));
+     botonM.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_minimizeBlack.png")));
+     
+}
+
+public void cambiarColorClaroM(JButton botonM){
+     botonM.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn_minimize.png")));
+     botonM.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn_minimize.png")));
+     botonM.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_minimize.png")));
+     
+}
+
+public void cambiarColorIgualOscuro(JButton botonC){
+     botonC.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn3_dark.png")));
+     botonC.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn3_dark.png")));
+     botonC.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn3_pressed_dark.png")));
+     botonC.setForeground(Color.decode("#000000"));
+}
+
+public void cambiarColorTresOscuro(JButton botonTres){
+     botonTres.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_BDark.png")));
+     botonTres.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_BDark.png")));
+     botonTres.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_BDark_pressed.png")));
+     
+}
+
+public void cambiarColorDosOscuro(JButton botonDos){
+     botonDos.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_dark.png")));
+     botonDos.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_dark.png")));
+     botonDos.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_pressed_dark.png")));
+     botonDos.setForeground(Color.decode("#0db387"));
+    
+}
+
+public void cambiarColorOscuro(JButton boton){
+    
+     boton.setIcon(new ImageIcon(getClass().getResource("/imagenes/btn2_dark.png")));
+     boton.setPressedIcon(new ImageIcon(getClass().getResource("/imagenes/btn2_dark.png")));
+     boton.setRolloverIcon(new ImageIcon(getClass().getResource("/imagenes/btn1_pressed_dark.png")));
+     boton.setForeground(Color.decode("#96a8a0"));
+}
+
+
 
     public String recorte(float resultado){
         String retorno;
@@ -688,14 +917,18 @@ private boolean terminaEnOperador(String texto) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonBorradorU;
     private javax.swing.JButton botonBorrar;
+    private javax.swing.JButton botonCambiador;
     private javax.swing.JButton botonCero;
     private javax.swing.JButton botonCinco;
     private javax.swing.JButton botonCuatro;
     private javax.swing.JButton botonDiv;
-    private javax.swing.JButton botonDiv1;
     private javax.swing.JButton botonDos;
+    private javax.swing.JButton botonE;
     private javax.swing.JButton botonIgual;
+    private javax.swing.JButton botonM;
+    private javax.swing.JButton botonMod;
     private javax.swing.JButton botonMulti;
     private javax.swing.JButton botonNueve;
     private javax.swing.JButton botonOcho;
@@ -705,11 +938,10 @@ private boolean terminaEnOperador(String texto) {
     private javax.swing.JButton botonSeis;
     private javax.swing.JButton botonSiete;
     private javax.swing.JButton botonSuma;
-    private javax.swing.JButton botonTres1;
+    private javax.swing.JButton botonTres;
     private javax.swing.JButton botonUno;
     private javax.swing.JLabel casilla;
     private javax.swing.JLabel casillaDos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

@@ -1,0 +1,7 @@
+# Ignorar carpetas de compilación y distribución
+build/
+dist/
+
+# Ignorar archivos compilados
+*.class
+*.jar
